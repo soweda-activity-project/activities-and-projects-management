@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', ['divisions'=>\App\Division::all()]);
 });
+
+
+Route::post('apply', 'WebActivityController@receiveApplication');
+
+Route::get('notification-management', 'WebNotificationController@index');
+
+
